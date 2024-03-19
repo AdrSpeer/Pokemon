@@ -1,48 +1,36 @@
 import { useEffect, useState } from "react";
 import "./PokeCardSmall.css";
 
-const PokeCardSmall = (props) => {
-  const [pokemon, setPokemon] = useState([]);
-  const [pokemonDetails, setPokemonDetails] = useState([]);
+const PokeCardSmall = ({ url }) => {
+  const [pokemonData, setPokemondata] = useState();
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?limit=1025`)
+    fetch(`${url}`)
       .then((res) => res.json())
-      .then((pokemonData) => setPokemon(pokemonData))
-      .catch((error) => console.error("Fehler im Fetch All Pokemon", error));
+      .then((data) => setPokemondata(data))
+      .catch((error) => console.error("Fehler im Detail Pokemon Fetch", error));
   }, []);
 
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/bulbasaur/`)
-      .then((res) => res.json())
-      .then((pokemonDetailsData) => setPokemonDetails(pokemonDetailsData))
-      .catch((error) => console.error("Fehler im Fetch PokemonDetails", error));
-  }, []);
-
-  console.log(pokemon);
+  console.log(pokemonData);
 
   return (
     <section className="render-pokemon">
-      {pokemon ? (
+      {pokemonData ? (
         <div className="poke-card">
           <img
-            src={
-              pokemon.sprites.other.dream_world.front_default != null
-                ? pokemon.sprites.other.dream_world.front_default
-                : pokemon.sprites.other.home.front_default
-            }
+            src={pokemonData?.sprites.other["official-artwork"].front_default}
             alt=""
           />
           <div>
             <p>
               #
-              {pokemon.id < 10
-                ? "00" + pokemon.id
-                : pokemon.id < 100 && pokemon.id > 9
-                ? "0" + pokemon.id
-                : pokemon.id}
+              {pokemonData.id < 10
+                ? "00" + pokemonData.id
+                : pokemonData.id < 100 && pokemonData.id > 9
+                ? "0" + pokemonData.id
+                : pokemonData.id}
             </p>
-            <h3>{pokemon.name}</h3>
+            <p>{pokemonData?.name}</p>
           </div>
         </div>
       ) : (
