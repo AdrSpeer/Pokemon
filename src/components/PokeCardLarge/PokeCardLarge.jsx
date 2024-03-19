@@ -17,7 +17,8 @@ const PokeCardLarge = ({ props }) => {
           ? '00' + props.id
           : props.id < 100
           ? '0' + props.id
-          : props.id}
+          : props.id}{' '}
+        {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
       </h1>
       <div className='type-nav'></div>
       <div className='movements'>
