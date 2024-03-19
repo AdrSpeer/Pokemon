@@ -11,24 +11,24 @@ const Details = () => {
   const [currentPokemonData, setCurrentPokemonData] = useState();
   const { name } = useParams();
 
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1025`)
-      .then((response) => response.json())
-      .then((fetchedData) => setAllData(fetchedData))
-      .catch((error) => console.error('Error auf der Details Page', error));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1025`)
+  //     .then((response) => response.json())
+  //     .then((fetchedData) => setAllData(fetchedData))
+  //     .catch((error) => console.error('Error auf der Details Page', error));
+  // }, []);
 
-  allData
-    ? setWholePokedex(allData.results)
-    : console.log(`allData ist ${allData}`);
-  console.log(wholePokedex);
+  // allData
+  //   ? setWholePokedex(allData.results)
+  //   : console.log(`allData ist ${allData}`);
+  // console.log(wholePokedex);
 
-  useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/bulbasaur`)
-      .then((response) => response.json())
-      .then((fetchedData) => setCurrentPokemonData(fetchedData))
-      .catch((error) => console.error('Error auf der Details Page', error));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`https://pokeapi.co/api/v2/pokemon/bulbasaur`)
+  //     .then((response) => response.json())
+  //     .then((fetchedData) => setCurrentPokemonData(fetchedData))
+  //     .catch((error) => console.error('Error auf der Details Page', error));
+  // }, []);
 
   // useEffect(() => {
   //   const find = wholePokedex.find(
@@ -39,10 +39,13 @@ const Details = () => {
 
   return (
     <>
-    <Header />
-    <SearchbarDetail/>
-      {currentPokemonData ? (<h1>{currentPokemonData?.id}</h1>) : (
-      console.log('Ich brauche Feierabend') );}
+      <Header />
+      <SearchbarDetail />
+      {currentPokemonData ? (
+        <h1>{currentPokemonData?.id}</h1>
+      ) : (
+        console.log('Ich brauche Feierabend')
+      )}
     </>
   );
 };
