@@ -37,7 +37,7 @@ const PokeCardLarge = ({ props }) => {
         <div className='attacks'>
           {props.moves ? (
             props?.moves?.map((item, index) => (
-              <p key={index}>{item.move.name}</p>
+              <p key={index}>{item.move.name.toUpperCase()}</p>
             ))
           ) : (
             <p>Loading...</p>
