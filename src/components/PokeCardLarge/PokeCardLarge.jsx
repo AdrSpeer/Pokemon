@@ -1,7 +1,7 @@
 import './PokeCardLarge.css';
 
 const PokeCardLarge = (props) => {
-  return <></>;
+  return <div className='details-wrapper'></div>;
 };
 
 export default PokeCardLarge;
