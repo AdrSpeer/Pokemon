@@ -18,11 +18,13 @@ const Home = () => {
     <>
       <Header />
       <Searchbar />
-      {pokemonList?.results.map((item, index) => (
-        <div key={index}>
-          <PokeCardSmall url={item.url} />
-        </div>
-      ))}
+      <section className="pokemon-list">
+        {pokemonList?.results.map((item, index) => (
+          <div key={index}>
+            <PokeCardSmall url={item.url} />
+          </div>
+        ))}
+      </section>
     </>
   );
 };

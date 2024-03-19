@@ -21,12 +21,12 @@ const PokeCardSmall = ({ url }) => {
             src={pokemonData?.sprites.other["official-artwork"].front_default}
             alt=""
           />
-          <div>
+          <div className="poke-name">
             <p>
               #
               {pokemonData.id < 10
                 ? "00" + pokemonData.id
-                : pokemonData.id < 100 && pokemonData.id > 9
+                : pokemonData.id < 100 && pokemonData.id
                 ? "0" + pokemonData.id
                 : pokemonData.id}
             </p>
