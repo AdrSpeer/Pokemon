@@ -1,10 +1,13 @@
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div className="header-logo">
-      <img src="../../../public/img/PokeMonLogo.svg" alt="" />
-    </div>
+    <Link to={"/"}>
+      <div className="header-logo">
+        <img src="../../../public/img/PokeMonLogo.svg" alt="" />
+      </div>
+    </Link>
   );
 };
 

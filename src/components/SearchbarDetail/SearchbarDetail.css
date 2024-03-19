@@ -35,7 +35,3 @@
   text-decoration: none;
   color: black;
 }
-
-.suggestions a::first-letter {
-  text-transform: uppercase;
-}
