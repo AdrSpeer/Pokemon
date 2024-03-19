@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import "./Filter.css";
 import PokemonItem from "../../components/PokemonItem/PokemonItem";
+import Header from "../../components/Header/Header";
 
 const Filter = () => {
   const [filterData, setFilterData] = useState([]);
   const [selectedTypeData, setSelectedTypeData] = useState(null);
+  const [hidden, setHidden] = useState(true);
 
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/type/`)
@@ -21,12 +23,21 @@ const Filter = () => {
       })
       .catch((err) => console.log("Fehler beim Laden der API", err));
     setSelectedTypeData(null);
+    setHidden(false);
   };
 
   return (
     <>
       <section className="filter">
-        <div className="filter-box">
+        <div className="filter-header">
+          <Header />
+          <img
+            onClick={() => setHidden((hidden) => !hidden)}
+            src="../../../public/icons/Burger.svg"
+            alt="Burger Icon"
+          />
+        </div>
+        <div className={hidden ? "filter-box" : "filter-hidden"}>
           {filterData ? (
             filterData?.map((item, index) => (
               <button
@@ -44,8 +55,8 @@ const Filter = () => {
 
         <div className="filter-pokemon">
           {selectedTypeData?.pokemon ? (
-            selectedTypeData?.pokemon?.map((pokemon, index) => (
-              <PokemonItem pokemon={pokemon} key={index} />
+            selectedTypeData?.pokemon?.map((pokemon) => (
+              <PokemonItem pokemon={pokemon} key={pokemon.id} />
             ))
           ) : (
             <p></p>

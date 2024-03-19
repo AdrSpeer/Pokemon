@@ -1,15 +1,31 @@
+.filter a {
+  color: black;
+}
+
+.filter {
+  font-family: "Roboto";
+}
+
 .filter-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 3vw 5vw;
   padding: 2vw 6vw;
+  margin-bottom: 13vw;
+  margin-top: -15vw;
 }
+
+.filter-hidden {
+  display: none;
+}
+
 .filter-box button {
   padding: 2vw;
   border: 1px solid black;
   border-radius: 10px;
   text-transform: uppercase;
   color: var(--global--button--TextColor);
+  cursor: pointer;
 }
 .shadow {
   display: none;
@@ -24,7 +40,7 @@
   background-color: #e40000;
 }
 .flying {
-  background-color: #ccdadd;
+  background-color: #b6c1c4;
 }
 .poison {
   background-color: #ab00ae;
@@ -70,4 +86,19 @@
 }
 .fairy {
   background-color: #ffc2f9;
+}
+
+.filter-pokemon {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20vw 10vw;
+  padding: 5vw;
+}
+
+.filter-header {
+  margin-bottom: 20vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5vw;
 }

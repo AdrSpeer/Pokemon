@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const PokemonItem = ({ pokemon }) => {
   console.log(pokemon);
@@ -6,7 +7,8 @@ const PokemonItem = ({ pokemon }) => {
   useEffect(() => {
     fetch(`${pokemon.pokemon.url}`)
       .then((res) => res.json())
-      .then((data) => setRenderData(data));
+      .then((data) => setRenderData(data))
+      .catch((err) => console.log("Fehler beim Laden der API", err));
   }, []);
   console.log(renderData);
 
@@ -21,12 +23,20 @@ const PokemonItem = ({ pokemon }) => {
   };
 
   return (
-    <section>
-      <div>
-        <p>{renderData?.species?.name}</p>
-        <p>#{formatNumber(renderData.id)}</p>
+    <Link to={`/details/${renderData?.species?.name}`}>
+      <div className="render-pokemon">
+        <div className="poke-card">
+          <img
+            src={renderData?.sprites?.other[`official-artwork`]?.front_default}
+            alt={renderData?.species?.name}
+          />
+          <div className="poke-name">
+            <p>#{formatNumber(renderData.id)}</p>
+            <p>{renderData?.species?.name}</p>
+          </div>
+        </div>
       </div>
-    </section>
+    </Link>
   );
 };
 
