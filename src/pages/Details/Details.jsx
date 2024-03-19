@@ -1,8 +1,8 @@
-import './Details.css';
-import { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import SearchbarDetail from '../../components/SearchbarDetail/SearchbarDetail';
+import "./Details.css";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import Header from "../../components/Header/Header";
+import SearchbarDetail from "../../components/SearchbarDetail/SearchbarDetail";
 
 const Details = () => {
   const [allData, setAllData] = useState();
@@ -41,11 +41,7 @@ const Details = () => {
     <>
       <Header />
       <SearchbarDetail />
-      {currentPokemonData ? (
-        <h1>{currentPokemonData?.id}</h1>
-      ) : (
-        console.log('Ich brauche Feierabend')
-      )}
+      {currentPokemonData ? <h1>{currentPokemonData?.id}</h1> : console.log("Ich brauche Feierabend")}
     </>
   );
 };

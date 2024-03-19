@@ -1,0 +1,31 @@
+.searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.searchbar input {
+  width: 250px;
+  height: 30px;
+  border: none;
+  font-family: "Roboto";
+  font-size: 16px;
+  padding: 6px 18px;
+}
+
+.search {
+  border-radius: 50px;
+}
+
+.searchbar input:focus {
+  outline: none;
+}
+
+.searchbar input::placeholder {
+  color: #909090;
+}
+
+.searchbar img:hover {
+  cursor: pointer;
+}

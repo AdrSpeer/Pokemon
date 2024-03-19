@@ -1,10 +1,10 @@
-import './Header.css';
+import "./Header.css";
 
 const Header = () => {
   return (
-    <>
-      <h1>Header</h1>
-    </>
+    <div className="header-logo">
+      <img src="../../../public/img/PokeMonLogo.svg" alt="" />
+    </div>
   );
 };
 

@@ -1,0 +1,41 @@
+.input-show {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+.input-hide {
+  border-radius: 50px;
+}
+
+.suggestions {
+  width: 250px;
+  height: 0px;
+  transition: 0s;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.show {
+  width: 250px;
+  height: 200px;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  transition: 0.5s;
+  box-shadow: 0 10px 20px 1px rgba(188, 188, 188, 0.325);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 6px 18px;
+  overflow: scroll;
+}
+.suggestions a {
+  font-family: "Roboto";
+  text-decoration: none;
+  color: black;
+}
+
+.suggestions a::first-letter {
+  text-transform: uppercase;
+}

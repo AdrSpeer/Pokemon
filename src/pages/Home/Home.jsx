@@ -1,9 +1,14 @@
-import './Home.css';
+import Header from "../../components/Header/Header";
+import Searchbar from "../../components/Searchbar/Searchbar";
+import PokeCardSmall from "../../components/PokeCardSmall/PokeCardSmall";
+import "./Home.css";
 
 const Home = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Header />
+      <Searchbar />
+      <PokeCardSmall />
     </>
   );
 };
