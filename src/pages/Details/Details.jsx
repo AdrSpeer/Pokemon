@@ -14,9 +14,7 @@ const Details = () => {
   useEffect(() => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
       .then((response) => response.json())
-      .then((fetchedData) => {
-        setCurrentPokemonData(fetchedData), console.log(currentPokemonData);
-      })
+      .then((fetchedData) => setCurrentPokemonData(fetchedData))
       .catch((error) => console.error('Error auf der Details Page', error));
     setSearchElement('');
   }, [name]);

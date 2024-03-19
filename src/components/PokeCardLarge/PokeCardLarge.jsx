@@ -1,6 +1,7 @@
 import './PokeCardLarge.css';
 
 const PokeCardLarge = ({ props }) => {
+  console.log(props);
   return (
     <div className='details-wrapper'>
       <div className='outer-box'>
@@ -20,9 +21,28 @@ const PokeCardLarge = ({ props }) => {
           : props.id}{' '}
         {props.name.charAt(0).toUpperCase() + props.name.slice(1)}
       </h1>
-      <div className='type-nav'></div>
+      <div id='type-nav' className='filter-box'>
+        {props.types ? (
+          props?.types?.map((item, index) => (
+            <button id='details-button' className={item.type.name} key={index}>
+              {item.type.name}
+            </button>
+          ))
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
       <div className='movements'>
         <h2>ATTACKS AND MOVEMENTS</h2>
+        <div className='attacks'>
+          {props.moves ? (
+            props?.moves?.map((item, index) => (
+              <p key={index}>{item.move.name}</p>
+            ))
+          ) : (
+            <p>Loading...</p>
+          )}
+        </div>
       </div>
     </div>
   );
