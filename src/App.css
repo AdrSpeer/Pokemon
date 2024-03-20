@@ -1,10 +1,15 @@
 .main-div {
-  background-color: var(--global--background--Color);
+  background: var(--global--background--Color);
   min-height: 100svh;
 }
 .main-div-dark {
-  background-color: rgb(100, 100, 100);
-
+  background: rgb(162, 164, 164);
+  background: linear-gradient(
+    90deg,
+    rgb(107, 107, 107) 0%,
+    rgb(83, 84, 84) 50%,
+    rgb(59, 60, 60) 100%
+  );
   & .inner-box,
   & .poke-card {
     background: linear-gradient(

@@ -90,9 +90,9 @@
 
 .filter-pokemon {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20vw 10vw;
-  padding: 5vw;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20vw 5vw;
+  padding: 4vw;
 }
 
 .filter-header {
