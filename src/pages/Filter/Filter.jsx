@@ -41,11 +41,11 @@ const Filter = () => {
               </button>
             ))
           ) : (
-            <p className="loading">Loading...</p>
+            <p className="loading"></p>
           )}
         </div>
 
-        <div className="pokemon-list">{selectedTypeData?.pokemon ? selectedTypeData?.pokemon?.map((pokemon) => <PokemonItem pokemon={pokemon} key={pokemon.id} />) : <p></p>}</div>
+        <div className="pokemon-list">{selectedTypeData?.pokemon ? selectedTypeData?.pokemon?.map((pokemon) => <PokemonItem pokemon={pokemon} key={pokemon.id} />) : <p className="loading"></p>}</div>
       </section>
     </>
   );
