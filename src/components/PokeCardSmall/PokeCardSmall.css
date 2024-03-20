@@ -15,6 +15,7 @@
 .poke-card div p {
   font-family: roboto;
   font-size: 14px;
+  color: black;
 }
 
 .poke-card div p::first-letter {
