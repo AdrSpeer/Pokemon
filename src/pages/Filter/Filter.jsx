@@ -31,37 +31,21 @@ const Filter = () => {
       <section className="filter">
         <div className="filter-header">
           <Header />
-          <img
-            onClick={() => setHidden((hidden) => !hidden)}
-            src="../../../public/icons/Burger.svg"
-            alt="Burger Icon"
-          />
+          <img onClick={() => setHidden((hidden) => !hidden)} src="../../../public/icons/Burger.svg" alt="Burger Icon" />
         </div>
         <div className={hidden ? "filter-box" : "filter-hidden"}>
           {filterData ? (
             filterData?.map((item, index) => (
-              <button
-                onClick={() => filterIt(item.name)}
-                className={item.name}
-                key={index}
-              >
+              <button onClick={() => filterIt(item.name)} className={item.name} key={index}>
                 {item.name}
               </button>
             ))
           ) : (
-            <p>Loading...</p>
+            <p className="loading">Loading...</p>
           )}
         </div>
 
-        <div className="filter-pokemon">
-          {selectedTypeData?.pokemon ? (
-            selectedTypeData?.pokemon?.map((pokemon) => (
-              <PokemonItem pokemon={pokemon} key={pokemon.id} />
-            ))
-          ) : (
-            <p></p>
-          )}
-        </div>
+        <div className="pokemon-list">{selectedTypeData?.pokemon ? selectedTypeData?.pokemon?.map((pokemon) => <PokemonItem pokemon={pokemon} key={pokemon.id} />) : <p></p>}</div>
       </section>
     </>
   );

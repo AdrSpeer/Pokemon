@@ -9,10 +9,8 @@
 .filter-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 3vw 5vw;
-  padding: 2vw 6vw;
-  margin-bottom: 13vw;
-  margin-top: -15vw;
+  gap: 10px;
+  padding-inline: 30px;
 }
 
 .filter-hidden {
@@ -20,9 +18,8 @@
 }
 
 .filter-box button {
-  padding: 2vw;
-  border: 1px solid black;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 20px;
   text-transform: uppercase;
   color: var(--global--button--TextColor);
   cursor: pointer;
@@ -88,17 +85,10 @@
   background-color: #ffc2f9;
 }
 
-.filter-pokemon {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 20vw 5vw;
-  padding: 4vw;
-}
-
 .filter-header {
-  margin-bottom: 20vw;
+  margin-bottom: 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 5vw;
+  gap: 10px;
 }

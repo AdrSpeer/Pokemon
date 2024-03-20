@@ -17,24 +17,14 @@ const PokeCardSmall = ({ url }) => {
       <section className="render-pokemon">
         {pokemonData ? (
           <div className="poke-card">
-            <img
-              src={pokemonData?.sprites.other["official-artwork"].front_default}
-              alt=""
-            />
+            <img src={pokemonData?.sprites.other["official-artwork"].front_default} alt="" />
             <div className="poke-name">
-              <p>
-                #
-                {pokemonData.id < 10
-                  ? "00" + pokemonData.id
-                  : pokemonData.id < 100 && pokemonData.id
-                  ? "0" + pokemonData.id
-                  : pokemonData.id}
-              </p>
+              <p>#{pokemonData.id < 10 ? "00" + pokemonData.id : pokemonData.id < 100 && pokemonData.id ? "0" + pokemonData.id : pokemonData.id}</p>
               <p>{pokemonData?.name}</p>
             </div>
           </div>
         ) : (
-          <p>loading....</p>
+          <p className="loading"></p>
         )}
       </section>
     </Link>
