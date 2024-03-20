@@ -1,4 +1,5 @@
 .details-wrapper {
+  margin-top: 6rem;
   font-family: 'Roboto';
   font-weight: 900;
   display: flex;
@@ -88,5 +89,49 @@
     font-size: 20px;
     margin-bottom: 5px;
     text-align: center;
+  }
+}
+
+.outer-box {
+  position: relative;
+  height: 30vh;
+  width: 50vw;
+}
+
+.inner-box {
+  background: linear-gradient(52.41deg, #ffe1c6 4.87%, #ffcb05 94.37%);
+  border-radius: 20px;
+  height: 50%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.outer-box img {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  z-index: 2;
+}
+
+@media screen and (width <= 430px) {
+  .details-wrapper {
+    margin-top: 8rem;
+  }
+
+  .outer-box {
+    width: 75vw;
+  }
+
+  .inner-box {
+  }
+
+  .outer-box img {
+    width: 250px;
+    height: 250px;
+    left: 10%;
   }
 }

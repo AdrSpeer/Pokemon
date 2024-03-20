@@ -5,12 +5,11 @@ const PokeCardLarge = ({ props }) => {
   return (
     <div className='details-wrapper'>
       <div className='outer-box'>
-        <div className='inner-box'>
-          <img
-            src={props?.sprites?.other['official-artwork']?.front_default}
-            alt='a picture of the selected PokeMon'
-          />
-        </div>
+        <img
+          src={props?.sprites?.other['official-artwork']?.front_default}
+          alt='a picture of the selected PokeMon'
+        />
+        <div className='inner-box'></div>
       </div>
       <h1>
         #
