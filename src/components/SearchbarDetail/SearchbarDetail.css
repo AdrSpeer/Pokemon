@@ -29,6 +29,7 @@
   border-bottom-right-radius: 30px;
   padding: 6px 18px;
   overflow: scroll;
+  z-index: 5;
 }
 .suggestions a {
   font-family: "Roboto";
