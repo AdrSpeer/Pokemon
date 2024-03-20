@@ -68,6 +68,8 @@
 .movements {
   h2 {
     color: var(--global--accent--Color__1);
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
     font-size: 28px;
     margin-bottom: 10px;
     &:hover {
@@ -86,6 +88,8 @@
 
   p {
     color: var(--global--button--TextColor);
+    -webkit-text-stroke-width: 0.4px;
+    -webkit-text-stroke-color: black;
     font-size: 20px;
     margin-bottom: 5px;
     text-align: center;
@@ -119,7 +123,7 @@
 
 @media screen and (width <= 430px) {
   .details-wrapper {
-    margin-top: 8rem;
+    margin-top: 4rem;
   }
 
   .outer-box {

@@ -4,4 +4,13 @@
 }
 .main-div-dark {
   background-color: rgb(100, 100, 100);
+
+  & .inner-box,
+  & .poke-card {
+    background: linear-gradient(
+      52.41deg,
+      var(--global--accent--Color__dark) 4.87%,
+      #091c2e 94.37%
+    );
+  }
 }
